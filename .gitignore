@@ -1,0 +1,36 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# Obsidian workspace/cache files
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+
+# Sync/tool metadata
+.stfolder/
+.syncthing.*
+
+# Secrets and local config
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.mobileconfig
+*token*
+*secret*
+credentials.json
+oauth*.json
+
+# Logs and generated output
+*.log
+dist/
+build/
+node_modules/
