@@ -72,7 +72,7 @@ LifeOS/
 - **05 Archive** — completed or inactive material.
 - **06 Meta** — the operating layer: about you, voice, rules, agent instructions, and Agent OS.
 
-## What makes this agentic
+## What makes this tool-agnostic and agentic
 
 This is not just a folder template.
 
@@ -83,6 +83,7 @@ It includes an opinionated pattern for making your context usable by AI agents:
 3. **Project continuity** — every project can have a README and Log so agents can resume work without guessing.
 4. **Canonical workflows** — reusable workflows live in `06 Meta/Agent OS/canonical/skills/`.
 5. **Tool-specific adapters** — `06 Meta/Agent OS/adapters/` explains how different AI tools can use the same canonical source of truth.
+6. **Skill lifecycle** — `canonicalize-skill` turns useful workflows into portable canonical skills, and `wire-skill` exposes them to different AI tools without duplicating source content.
 
 Read more:
 
