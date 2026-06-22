@@ -31,6 +31,18 @@ Life OS/
 6. Treat canonical workflows in `06 Meta/Agent OS/canonical/` as source-of-truth workflows.
 7. Treat adapter files as tool-specific doorways, not as the canonical source.
 
+## Canonical skills and adapters
+
+Reusable agent workflows live in `06 Meta/Agent OS/canonical/skills/`.
+
+Tool-specific skill folders and adapter files are doorways only. They should point to canonical skills, not become separate source-of-truth copies.
+
+When creating or improving a reusable workflow:
+
+1. Use `canonicalize-skill` to make it a portable canonical skill.
+2. Use `wire-skill` to expose it to supported tools.
+3. Edit the canonical skill first; only adjust adapters when wiring or compatibility requires it.
+
 ## Working principles
 
 - Capture first, organise later.
