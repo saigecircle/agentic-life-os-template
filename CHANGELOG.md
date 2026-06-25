@@ -2,13 +2,13 @@
 
 All notable changes to the Agentic Life OS Template will be documented here.
 
-## 2026-06-26 — Cost-aware tool routing
+## 2026-06-26 — Fit-for-purpose tool routing
 
-Added the minimal tool-routing architecture for reliable, cost-aware agent tool choice.
+Added the minimal tool-routing architecture for reliable, fit-for-purpose agent tool choice. Cost awareness is included as one routing factor, not the main purpose.
 
 ### Added
 
-- Added `vault/06 Meta/Tools.md` as the practical routing map for preferred tools, external systems, and cost-sensitive defaults.
+- Added `vault/06 Meta/Tools.md` as the practical routing map for preferred tools, external systems, and fit-for-purpose defaults.
 - Added a simple three-layer explanation to the main README:
   - `06 Meta/Tools.md` for tool choice and defaults.
   - `06 Meta/Agent OS/tools/` for durable tool specs only when repeated use justifies them.
@@ -22,7 +22,7 @@ Added the minimal tool-routing architecture for reliable, cost-aware agent tool 
 
 ### Why it matters
 
-Agents can now choose the cheapest reliable default first, avoid surprise paid API usage, and only consult deeper tool specs when execution details are genuinely worth maintaining.
+Agents can now choose the tool that best fits the work, avoid unnecessary complexity or spend, and only consult deeper tool specs when execution details are genuinely worth maintaining.
 
 ## 2026-06-25 — Skill setup lifecycle
 

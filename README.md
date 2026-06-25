@@ -84,17 +84,17 @@ It includes an opinionated pattern for making your context usable by AI agents:
 4. **Canonical workflows** — reusable workflows live in `06 Meta/Agent OS/canonical/skills/`.
 5. **Tool-specific adapters** — `06 Meta/Agent OS/adapters/` explains how different AI tools can use the same canonical source of truth.
 6. **Skill lifecycle** — `setup-skill` is the orchestrator: it calls `assess-skill` to choose the lightest path, `canonicalize-skill` to create the canonical discovery surface, and `wire-skill` to expose it to different AI tools without duplicating source content.
-7. **Cost-aware tool routing** — `06 Meta/Tools.md` tells agents which tool to try first; `06 Meta/Agent OS/tools/` stores detailed tool specs only when repeated use justifies them.
+7. **Fit-for-purpose tool routing** — `06 Meta/Tools.md` tells agents which tool fits the work first; `06 Meta/Agent OS/tools/` stores detailed tool specs only when repeated use justifies them.
 
 ## Tool routing in plain English
 
 Use three layers, and stop at the first one that answers the question:
 
-1. **`06 Meta/Tools.md`** — practical defaults: “for this type of work, use this tool first.” This is where cost-sensitive preferences belong.
+1. **`06 Meta/Tools.md`** — practical defaults: “for this type of work, use this tool first.” This is where fit-for-purpose preferences belong, including cost constraints when they matter.
 2. **`06 Meta/Agent OS/tools/`** — durable tool specs: setup, invocation, cost notes, and failure modes. Add entries only for tools used often enough to justify maintenance.
 3. **Skills** — workflow judgment: when the work needs process, constraints, or domain decisions rather than just a tool call.
 
-This keeps the system simple: agents can choose the right tool quickly, avoid surprise costs, and only open deeper specs when execution details matter.
+This keeps the system simple: agents can choose the right tool quickly, avoid unnecessary complexity or spend, and only open deeper specs when execution details matter.
 
 Read more:
 

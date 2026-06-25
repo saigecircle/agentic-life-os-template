@@ -1,6 +1,6 @@
 # Tools
 
-Use this as the practical routing map for external systems, tools, and cost-aware defaults.
+Use this as the practical routing map for external systems and fit-for-purpose tool defaults.
 
 This file answers: **when I need to do X, what should I use first?**
 
@@ -12,17 +12,17 @@ Last reviewed: YYYY-MM-DD.
 
 ## Preferred tool routing
 
-Agents should prefer already-paid subscriptions, local tools, and low-cost pay-as-you-go routes before expensive APIs. Ask before using uncertain or high-cost paid routes, and name the trade-off when escalating from the cheaper default.
+Agents should choose the tool that best fits the work before reaching for more complex or expensive options. Prefer already-available subscriptions, local tools, and simple routes when they meet the need. Ask before using uncertain or high-cost paid routes, and name the trade-off when escalating.
 
 Replace these starter rows with your own defaults.
 
 | Work type | Default | Fallback / escalation |
 |-----------|---------|-----------------------|
 | Copy | Current agent harness | External copy tools only if explicitly requested. |
-| Images | Already-paid image subscription or local route | PAYG image APIs only when the default route is unsuitable. |
+| Images | Preferred image subscription or local route | PAYG image APIs only when the default route is unsuitable. |
 | Video cleanup | Preferred video cleanup workflow/tool | Manual editing or specialist tools only when needed. |
 | Authored video, overlays, and motion graphics | Preferred composition/rendering tool | Specialist workflows when the work becomes repeated. |
-| Music beds | Low-cost exact-duration instrumental generator | Higher-cost music tools only when quality/control justifies it. |
+| Music beds | Exact-duration instrumental generator that fits the brief | Higher-cost music tools only when quality/control justifies it. |
 | Music with vocals or lyrics | Dedicated song-generation tool | Avoid for voiceover beds unless vocals are explicitly wanted. |
 
 ---
