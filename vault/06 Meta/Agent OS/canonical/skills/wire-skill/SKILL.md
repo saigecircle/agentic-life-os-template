@@ -1,66 +1,70 @@
 ---
 name: wire-skill
-description: Wire a canonical Agent OS skill into tool-specific adapter locations without duplicating the source content. Use after creating or updating a canonical skill.
+description: Wires a canonical Agent OS skill into supported harness discovery paths without duplicating skill content. Use after creating a canonical skill or when verifying skill availability across OpenCode, Claude Code, Codex, and Pi.
+metadata:
+  argument-hint: "Canonical skill folder name, e.g. 'handoff'"
 ---
 
 # Wire Skill
 
-Expose a canonical skill to one or more AI tools while keeping `06 Meta/Agent OS/canonical/skills/` as the source of truth.
+Expose a canonical Agent OS skill to supported harnesses through direct discovery or symlinks.
 
-## When to use
+## Role
 
-Use after a canonical skill exists and you want tools such as Claude Code, Codex, Pi, OpenCode, Cursor, or another agent harness to discover it.
+Use this skill when:
 
-Do not use this to rewrite the skill itself. Use `canonicalize-skill` first when the skill is not yet clean and portable.
+- A new canonical skill has been created under `06 Meta/Agent OS/canonical/skills/`.
+- An existing canonical skill, direct external symlink, or external wrapper needs to be made discoverable by supported harnesses.
+- Skill wiring should be checked without copying canonical or external content.
 
-## Procedure
+Do not use this skill for:
 
-1. Confirm the canonical skill exists:
+- Creating or rewriting the skill content itself.
+- Harness-specific custom behavior that belongs in an adapter.
+- Duplicating canonical or external skill folders into harness directories.
 
-```text
-06 Meta/Agent OS/canonical/skills/<skill-name>/SKILL.md
-```
+## Inputs
 
-2. Identify which tools need access.
+- Canonical skill folder name.
+- Vault root with supported harness directories.
+- Current OpenCode config, when checking direct canonical discovery.
 
-3. Prefer one of these adapter patterns:
-   - **Direct discovery:** configure the tool to read `06 Meta/Agent OS/canonical/skills/`.
-   - **Symlink:** create a symbolic link from the tool's expected skills folder to the canonical skill folder.
-   - **Thin adapter:** write a small tool-specific note that points back to the canonical skill.
+## Process
 
-4. Avoid copying canonical skill content into multiple places. Copies drift.
+1. Confirm `06 Meta/Agent OS/canonical/skills/<skill>/SKILL.md` exists.
+2. Resolve the canonical `SKILL.md` target and classify it as self-owned canonical, direct `EXT` symlink, or `EXT-WRAPPER` active surface.
+3. For direct `EXT` and `EXT-WRAPPER`, check that `06 Meta/Agent OS/external-skills.md` records the external source, `Current ref`, `Upstream version` when declared, exposure, and wrapper reason when relevant.
+4. Ensure harness skill directories exist or ask before creating missing harness structure.
+5. Create or verify per-skill symlinks for Claude Code, Codex, and Pi.
+6. Verify OpenCode can discover the canonical skills folder via `skills.paths`.
+7. Read each wired `SKILL.md` path enough to confirm it resolves to the intended canonical, external, or wrapper content.
+8. Log the wiring in the portability project log when working in this vault.
 
-5. If an adapter path already exists:
-   - if it is the correct symlink, leave it alone;
-   - if it is a broken symlink, fix it;
-   - if it is a real folder or file, stop and decide whether to preserve, replace, or merge it.
+## Judgment Rules
 
-6. Verify each adapter resolves to the canonical `SKILL.md`.
+- Use symlinks or direct config, not copied skill content.
+- Treat the canonical skill folder as the active discovery surface. For direct `EXT`, the symlink target under `06 Meta/Agent OS/external/` remains the upstream-owned source of truth.
+- If an existing harness path is a real folder, preserve it first or ask before replacing it.
+- Make wiring idempotent where possible: skip correct links, fix broken links, and report conflicts.
+- OpenCode does not need per-skill symlinks when `skills.paths` already points at the canonical skills folder.
 
-## Example symlink pattern
+## Tools
 
-From the vault root:
+- File read/search tools for validation.
+- Symlink and config-editing tools as needed.
 
-```bash
-mkdir -p .claude/skills
-ln -s "../../06 Meta/Agent OS/canonical/skills/<skill-name>" \
-  ".claude/skills/<skill-name>"
-```
+## Output
 
-Adjust the relative path for each tool's adapter folder.
+Return a short wiring report listing:
 
-## Verification
+- Canonical source checked.
+- Harness paths created, already correct, or blocked.
+- OpenCode config status.
+- Any legacy copy preserved before replacement.
 
-Wiring is complete when:
+## Failure Modes
 
-- the canonical `SKILL.md` remains the only source-of-truth copy;
-- each target tool can read or resolve the skill;
-- no private local path is required unless the adapter is intentionally machine-specific;
-- existing non-symlink content was not overwritten accidentally.
-
-## Failure modes
-
-- **Canonical skill missing:** create or canonicalize it first.
-- **Existing adapter conflict:** stop and preserve the existing file/folder before replacing it.
-- **Tool lacks skill discovery:** create a small adapter README that tells the tool to read the canonical skill.
-- **Public template repo:** keep examples generic and avoid private paths, account names, or secrets.
+- Canonical source missing: stop and ask whether to create the skill first.
+- Existing non-symlink harness folder: preserve or ask before replacement.
+- OpenCode config missing: report that direct discovery is unverified rather than creating config silently.
+- Symlink creation fails: report the exact path and do not claim the harness is wired.

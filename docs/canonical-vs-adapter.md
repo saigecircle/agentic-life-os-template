@@ -15,6 +15,17 @@ Examples:
 
 Canonical content should be clear, durable, and tool-agnostic.
 
+## Skill lifecycle
+
+Reusable skills follow a small lifecycle:
+
+1. `setup-skill` orchestrates setup from a URL, repo, file, folder, archive, or pasted text.
+2. `assess-skill` recommends the lightest safe path: `EXT`, `EXT-WRAPPER`, or `SELF-OWNED`.
+3. `canonicalize-skill` creates the approved canonical discovery surface.
+4. `wire-skill` exposes that surface to AI tools without copying skill content.
+
+This keeps the Life OS as the source of truth while preserving external upstream skills when direct exposure is enough.
+
 ## Adapter
 
 Adapters are tool-specific doorways into the canonical source.

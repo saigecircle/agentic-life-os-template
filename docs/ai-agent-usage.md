@@ -19,3 +19,15 @@ For projects, agents should read:
 3. the specific files relevant to the task.
 
 This makes it easier to resume work without relying on one long chat thread.
+
+## Adding reusable skills
+
+When an agent is asked to add, install, expose, or adapt a reusable skill, start with `setup-skill`.
+
+`setup-skill` coordinates the lifecycle:
+
+- `assess-skill` chooses the lightest safe path.
+- `canonicalize-skill` creates the canonical discovery surface.
+- `wire-skill` exposes it to supported tools without duplicating source content.
+
+Do not copy the same skill into multiple tool folders unless there is no cleaner adapter path.

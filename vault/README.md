@@ -37,11 +37,13 @@ Reusable agent workflows live in `06 Meta/Agent OS/canonical/skills/`.
 
 Tool-specific skill folders and adapter files are doorways only. They should point to canonical skills, not become separate source-of-truth copies.
 
-When creating or improving a reusable workflow:
+When adding or improving reusable skills, use the skill lifecycle:
 
-1. Use `canonicalize-skill` to make it a portable canonical skill.
-2. Use `wire-skill` to expose it to supported tools.
-3. Edit the canonical skill first; only adjust adapters when wiring or compatibility requires it.
+1. Use `setup-skill` as the orchestrator when bringing in a skill from a URL, repo, file, folder, archive, or pasted text.
+2. `setup-skill` calls `assess-skill` to recommend the lightest path: `EXT`, `EXT-WRAPPER`, or `SELF-OWNED`.
+3. Use `canonicalize-skill` to create the canonical discovery surface.
+4. Use `wire-skill` to expose it to supported tools without duplicating source content.
+5. Edit the canonical skill first; only adjust adapters when wiring or compatibility requires it.
 
 ## Working principles
 
