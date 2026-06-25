@@ -14,9 +14,15 @@ The Life OS is the system. AI tools are clients.
 Agent OS/
 ├── canonical/skills/   # source-of-truth workflows and active skill surfaces
 ├── adapters/           # tool-specific instructions or discovery notes
-├── tools/              # notes about local tools and integrations
+├── tools/              # durable specs for repeated external tool use
 └── external-skills.md  # registry for upstream-owned skill sources
 ```
+
+## Tool routing
+
+For preferred tool routing by work type, see `06 Meta/Tools.md`.
+
+Keep defaults there. Use `06 Meta/Agent OS/tools/` only when repeated use proves a tool needs durable invocation details, cost notes, setup notes, or failure modes.
 
 ## Canonical vs adapter
 
@@ -80,6 +86,7 @@ The template includes these generic starter skills:
 - The Life OS is the source of truth.
 - AI tools are clients, not the home for durable context.
 - Do not duplicate canonical judgment across harnesses.
+- Keep preferred tool routing in `06 Meta/Tools.md`; keep detailed tool specs in `06 Meta/Agent OS/tools/` only when justified.
 - Preserve external upstream skills unedited unless deliberately adopting or forking them.
 - Prefer direct exposure before wrappers.
 - Use wrappers only for real operational reasons.

@@ -2,6 +2,28 @@
 
 All notable changes to the Agentic Life OS Template will be documented here.
 
+## 2026-06-26 — Cost-aware tool routing
+
+Added the minimal tool-routing architecture for reliable, cost-aware agent tool choice.
+
+### Added
+
+- Added `vault/06 Meta/Tools.md` as the practical routing map for preferred tools, external systems, and cost-sensitive defaults.
+- Added a simple three-layer explanation to the main README:
+  - `06 Meta/Tools.md` for tool choice and defaults.
+  - `06 Meta/Agent OS/tools/` for durable tool specs only when repeated use justifies them.
+  - skills for workflow judgment and process.
+
+### Changed
+
+- Updated the vault README and Meta README so agents can find `Tools.md` when tool choice matters.
+- Tightened `vault/06 Meta/Agent OS/tools/README.md` to clarify that the tool registry is for preserved invocation details, setup notes, cost notes, and failure modes — not everyday routing.
+- Updated the Agent OS README to point preferred tool routing back to `06 Meta/Tools.md`.
+
+### Why it matters
+
+Agents can now choose the cheapest reliable default first, avoid surprise paid API usage, and only consult deeper tool specs when execution details are genuinely worth maintaining.
+
 ## 2026-06-25 — Skill setup lifecycle
 
 Major update to the Agent OS skills architecture.

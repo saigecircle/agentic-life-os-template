@@ -30,6 +30,7 @@ Life OS/
 5. Treat `06 Meta/` as the operating layer.
 6. Treat canonical workflows in `06 Meta/Agent OS/canonical/` as source-of-truth workflows.
 7. Treat adapter files as tool-specific doorways, not as the canonical source.
+8. Use `06 Meta/Tools.md` for preferred tool routing and cost-aware defaults.
 
 ## Canonical skills and adapters
 
@@ -53,3 +54,4 @@ When adding or improving reusable skills, use the skill lifecycle:
 - Resources are reference, not active commitments.
 - Archive keeps active work calm.
 - The vault is home; AI tools are clients.
+- Use `06 Meta/Tools.md` to choose tools; use `06 Meta/Agent OS/tools/` only when repeated execution details need to be preserved.

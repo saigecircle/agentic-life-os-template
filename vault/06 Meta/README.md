@@ -9,4 +9,5 @@ Suggested files:
 - `About Me.md`
 - `Voice.md`
 - `Team.md`
+- `Tools.md` — preferred tool routing, external systems, and cost-aware defaults
 - `Agent OS/README.md`
