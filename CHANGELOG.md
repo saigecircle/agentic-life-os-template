@@ -2,6 +2,26 @@
 
 All notable changes to the Agentic Life OS Template will be documented here.
 
+## 2026-06-27 — Richer starter vault operating docs
+
+Made the installed starter vault more useful on day one by expanding its internal README and Meta files into practical operating guides.
+
+### Added
+
+- Added `vault/00 Inbox/README.md` with capture, triage, sweep, and agent filing rules.
+- Added `vault/06 Meta/Agent OS/adapters/README.md` to explain the adapter layer before tool-specific stubs.
+
+### Changed
+
+- Expanded `vault/README.md` with retrieval, memory protocol, file hygiene, AI-agent rules, privacy, tools, and canonical skills guidance.
+- Expanded folder READMEs for Projects, People, Areas, Resources, Archive, and Meta with what-belongs/what-doesn't-belong guidance, starter shapes, and agent instructions.
+- Expanded `vault/06 Meta/Tools.md`, `Team.md`, `Voice.md`, and `About Me.md` with useful placeholders and operating context prompts.
+- Expanded Agent OS, tool registry, external skills, and adapter notes while keeping them tool-agnostic and public-safe.
+
+### Why it matters
+
+The template now behaves more like a real Life OS: folder-level guidance is detailed enough for humans and agents to use without copying private vault specifics.
+
 ## 2026-06-27 — Beginner-friendly publishing cleanup
 
 Improved the public template documentation so new users can understand, install, and safely try the Agentic Life OS without depending on any single AI tool.

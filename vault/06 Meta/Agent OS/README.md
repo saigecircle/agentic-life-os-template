@@ -1,94 +1,105 @@
 # Agent OS
 
-Agent OS is the tool-agnostic layer for AI-agent instructions, reusable workflows, skill lifecycle, and adapters.
+Tool-agnostic layer for reusable AI-agent behaviour.
 
-The Life OS is the system. AI tools are clients.
+The Life OS is the source of truth. AI tools are clients.
 
-## Core pattern
+## Core principle
 
-> Canonical workflow knowledge lives in the Life OS. Tool-specific adapters point to it.
+Workflow knowledge should live in the vault, not be trapped inside one AI app.
 
-## Folders
+Canonical workflows live here once. Tool-specific adapters point to them.
+
+## Folder map
 
 ```text
 Agent OS/
-├── canonical/skills/   # source-of-truth workflows and active skill surfaces
-├── adapters/           # tool-specific instructions or discovery notes
-├── tools/              # durable specs for repeated external tool use
-└── external-skills.md  # registry for upstream-owned skill sources
+├── README.md
+├── canonical/
+│   └── skills/
+├── adapters/
+├── tools/
+└── external-skills.md
 ```
 
-## Tool routing
+## Layers
 
-For preferred tool routing by work type, see `06 Meta/Tools.md`.
-
-Keep defaults there. Use `06 Meta/Agent OS/tools/` only when repeated use proves a tool needs durable invocation details, cost notes, setup notes, or failure modes.
+| Layer | Purpose | Examples |
+|---|---|---|
+| Vault docs | Durable human + agent context | root README, folder READMEs, project logs |
+| Skills | Reusable workflow judgment | filing, project setup, handoff |
+| Adapters | Tool-specific discovery and wiring | Claude Code, Codex, Pi, OpenCode |
+| Tools | Durable external tool invocation details | APIs, CLIs, paid services |
+| External skills registry | Upstream-owned skills exposed to this Life OS | `external-skills.md` |
 
 ## Canonical vs adapter
 
-- **Canonical** means source of truth.
-- **Adapter** means tool-specific doorway.
+A **canonical workflow** is the source of truth.
 
-If you change AI tools later, keep the canonical workflows and update the adapters.
+An **adapter** is a doorway that helps one tool find or use the canonical workflow.
 
-## Skills lifecycle
+Do not copy full skill content into every tool's folder. If the rule belongs to the workflow, put it in canonical. If the rule only helps a specific tool discover the workflow, put it in an adapter.
 
-Skills are the primary Agent OS artifact. If reusable behavior needs judgment, constraints, or an ordered process, put it in a skill first.
+## Skill ownership model
 
-Canonical location:
+Use the lightest ownership path that works.
+
+| Status | Meaning | Use when |
+|---|---|---|
+| `SELF-OWNED` | You maintain the skill in this Life OS | The workflow is yours or heavily customised. |
+| `EXT` | Upstream-owned, exposed directly | The external skill is usable as-is. |
+| `EXT-WRAPPER` | Thin local wrapper around upstream | You need local naming, routing, or constraints without forking the skill. |
+
+## Skill lifecycle
+
+When adding, installing, exposing, or adapting a reusable skill:
+
+1. **Assess** — decide whether it should be `EXT`, `EXT-WRAPPER`, or `SELF-OWNED`.
+2. **Canonicalize** — create the approved canonical discovery surface.
+3. **Wire** — expose it to the tools that need it.
+4. **Validate** — confirm the tool can discover and use it without duplicating source content.
+
+Starter workflow names in this template:
 
 ```text
-06 Meta/Agent OS/canonical/skills/<skill-name>/SKILL.md
+setup-skill → assess-skill → canonicalize-skill → wire-skill
 ```
-
-Skill ownership is intentionally simple:
-
-- `SELF-OWNED` — the vault owner maintains the skill. The canonical folder is the source of truth.
-- `EXT` — an upstream-owned skill can be exposed directly. Preserve the upstream source unedited and point canonical discovery at it.
-- `EXT-WRAPPER` — an upstream-owned skill needs a thin vault-owned wrapper for real operational reasons, such as invalid YAML, harness breakage, unsafe assumptions, or local routing guardrails.
-
-Use `external-skills.md` only for upstream-owned `EXT` and `EXT-WRAPPER` sources. Self-owned skills do not need a separate registry.
-
-## Setup workflow
-
-Use `setup-skill` when adding a skill from a URL, repo, file, folder, archive, or pasted text.
-
-`setup-skill` is the front door:
-
-1. **Assess** the source.
-2. **Recommend** the lightest setup path: `EXT`, `EXT-WRAPPER`, or `SELF-OWNED`.
-3. **Confirm** concrete file, symlink, and manifest changes before editing.
-4. **Canonicalize** the discovery surface.
-5. **Wire** supported harnesses without duplicating content.
-6. **Validate and smoke-test** when possible.
-7. **Report** what changed and what still needs manual follow-up.
-
-The lifecycle helpers remain independently useful:
-
-- `assess-skill` — recommendation only; no installs, wiring, or rewrites.
-- `canonicalize-skill` — create the approved canonical discovery surface.
-- `wire-skill` — expose an existing canonical skill to supported AI tools through config or symlinks.
 
 ## Starter skills
 
-The template includes these generic starter skills:
+The template includes small generic skills under:
 
-- `project-setup` — start a new project with a README and Log.
-- `handoff` — preserve context before pausing or switching tools.
-- `filing` — file loose notes into the right vault home.
-- `setup-skill` — orchestrate skill assessment, setup, wiring, validation, and smoke tests.
-- `assess-skill` — assess a possible skill and recommend the lightest safe setup path.
-- `canonicalize-skill` — turn a useful workflow or approved external source into a portable canonical skill surface.
-- `wire-skill` — expose a canonical skill to tool-specific adapters without copying it.
+```text
+06 Meta/Agent OS/canonical/skills/
+```
+
+Useful starters:
+
+- `filing` — decide where notes/files belong.
+- `project-setup` — create a project README and Log.
+- `handoff` — preserve current state for later continuation.
+- `setup-skill` — orchestrate skill setup safely.
+- `assess-skill`, `canonicalize-skill`, `wire-skill` — skill lifecycle helpers.
+
+## Tools vs skills
+
+- Use `06 Meta/Tools.md` to decide which tool fits a task.
+- Use `06 Meta/Agent OS/tools/` for detailed repeated invocation notes.
+- Use skills for workflow judgment: when to ask, what to preserve, what not to do.
+
+## Adapter rules
+
+- Keep startup files like `AGENTS.md` and `CLAUDE.md` tiny.
+- Point tools back to the root README and canonical skills.
+- Prefer direct configuration or symlinks over copying skill folders.
+- If an adapter accumulates workflow judgment, move that judgment back to canonical.
 
 ## Design rules
 
-- The Life OS is the source of truth.
-- AI tools are clients, not the home for durable context.
-- Do not duplicate canonical judgment across harnesses.
-- Keep preferred tool routing in `06 Meta/Tools.md`; keep detailed tool specs in `06 Meta/Agent OS/tools/` only when justified.
-- Preserve external upstream skills unedited unless deliberately adopting or forking them.
-- Prefer direct exposure before wrappers.
-- Use wrappers only for real operational reasons.
-- Prefer symlinks or configured discovery paths over copied skill folders.
-- Keep adapters small and replaceable.
+- Human-readable first.
+- Tool-agnostic by default.
+- Fake examples only in public templates.
+- No secrets or credentials.
+- Add structure only when it reduces future confusion.
+
+<!-- Add supported agent tools and local discovery/config notes under adapters/. -->

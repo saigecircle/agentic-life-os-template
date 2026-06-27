@@ -1,33 +1,75 @@
 # Tool Registry
 
-Use this folder for durable specs about external tools, APIs, CLIs, and integrations.
+Durable specs for repeated external tool use.
 
-Do not store secrets here.
+Use this folder for tool details that are too specific for `06 Meta/Tools.md` but useful enough to preserve.
+
+## What belongs here
+
+- Setup notes for tools you use repeatedly.
+- Exact invocation patterns.
+- Inputs and outputs.
+- Cost or rate-limit cautions.
+- Failure modes and recovery steps.
+- Links to related skills.
+
+## What belongs in `06 Meta/Tools.md` instead
+
+- High-level tool routing.
+- Which tool to try first.
+- External system names and access paths.
+- Cost/privacy cautions that affect tool choice.
+
+## Tool entry template
+
+````markdown
+---
+type: tool
+status: active
+last_reviewed: YYYY-MM-DD
+---
+
+# Tool Name
 
 ## Purpose
 
-The tool registry answers: **how exactly do I use this tool reliably?**
+What this tool is for.
 
-Preferred tool choices belong in `06 Meta/Tools.md`. Add a file here only when repeated use proves a tool needs preserved setup notes, invocation details, cost notes, inputs/outputs, or failure modes.
+## Access
 
-## File pattern
+Where it is used or launched. Name credential storage only; never paste secrets.
+
+## Inputs
+
+What the tool needs.
+
+## Outputs
+
+What it produces.
+
+## Common commands or calls
 
 ```text
-06 Meta/Agent OS/tools/<tool-name>.md
+example command here
 ```
 
-A tool entry can include:
+## Cost / limits
 
-- purpose
-- access path or invocation
-- credentials by name only, never secret values
-- key inputs and outputs
-- cost notes
-- known failure modes
-- skills or workflows that depend on it
+Any cost, quota, privacy, or approval cautions.
 
-## Rule of thumb
+## Failure modes
 
-If an agent only needs to choose a tool, use `06 Meta/Tools.md`.
+Known errors and recovery steps.
 
-If an agent keeps needing the same setup commands, API parameters, pricing caveats, or recovery steps, add a tool spec here.
+## Related skills
+
+-
+````
+
+## Safety
+
+- Do not store secrets here.
+- Refer to credentials by name only, such as “password manager entry: Example Tool”.
+- Ask before paid, destructive, publishing, or external-send actions.
+
+<!-- Add tool specs only after repeated use proves they are needed. -->

@@ -1,47 +1,81 @@
 # Tools
 
-Use this as the practical routing map for external systems and fit-for-purpose tool defaults.
+Practical routing map for tools, external systems, and fit-for-purpose defaults.
 
-This file answers: **when I need to do X, what should I use first?**
+Last reviewed: YYYY-MM-DD
 
-Detailed durable specs for external tools belong in [[06 Meta/Agent OS/tools/README|Agent OS tool registry]] only when repeated use proves they are worth preserving.
-
-Last reviewed: YYYY-MM-DD.
-
----
-
-## Preferred tool routing
-
-Agents should choose the tool that best fits the work before reaching for more complex or expensive options. Prefer already-available subscriptions, local tools, and simple routes when they meet the need. Ask before using uncertain or high-cost paid routes, and name the trade-off when escalating.
-
-Replace these starter rows with your own defaults.
-
-| Work type | Default | Fallback / escalation |
-|-----------|---------|-----------------------|
-| Copy | Current agent harness | External copy tools only if explicitly requested. |
-| Images | Preferred image subscription or local route | PAYG image APIs only when the default route is unsuitable. |
-| Video cleanup | Preferred video cleanup workflow/tool | Manual editing or specialist tools only when needed. |
-| Authored video, overlays, and motion graphics | Preferred composition/rendering tool | Specialist workflows when the work becomes repeated. |
-| Music beds | Exact-duration instrumental generator that fits the brief | Higher-cost music tools only when quality/control justifies it. |
-| Music with vocals or lyrics | Dedicated song-generation tool | Avoid for voiceover beds unless vocals are explicitly wanted. |
-
----
-
-## External systems and access paths
-
-Each row names the system of record, usual access path, and how agents should treat it.
-
-| System | Access path | Owns / contains | Agent use |
-|--------|-------------|-----------------|-----------|
-| Life OS vault | Local files | Durable personal/project context | Read before answering vault-specific questions; write durable knowledge back to the natural vault location. |
-| Agent harnesses | Claude Code / Codex / Pi / OpenCode / Cursor / other | Working surfaces for agent sessions | Treat as clients of the vault, not the source of truth. |
-| Agent OS | [[06 Meta/Agent OS/README|Agent OS]] | Canonical skills, tool registry, workflows, and adapters | Use for reusable agent behaviour and architecture. |
-| Agent OS tool registry | [[06 Meta/Agent OS/tools/README|Tool registry]] | Durable invocation details for external tools | Add entries only when repeated use proves a tool needs preserved setup, cost notes, or failure modes. |
-
----
+<!-- Replace these starter rows with your own tools. Do not put passwords, API keys, OAuth files, tokens, or secrets here. Name the system; store credentials in a password manager. -->
 
 ## How to use this file
 
-- If a task needs a tool choice, check this map first.
-- If a system is listed but unavailable, say what is missing and offer the next best route.
-- If a tool needs durable setup details, credentials-by-name, invocation examples, cost notes, or failure modes, add or update an entry in the [[06 Meta/Agent OS/tools/README|Agent OS tool registry]] rather than expanding this map indefinitely.
+Use this file when a human or agent needs to know **which tool to use first**.
+
+Keep it practical:
+
+- preferred tools for common work;
+- fallback tools when the default is unavailable;
+- cost, privacy, or approval cautions;
+- links to deeper tool specs only when repeated use justifies them.
+
+If a tool needs detailed setup, invocation examples, or failure modes, create a durable entry under:
+
+```text
+06 Meta/Agent OS/tools/
+```
+
+## Tool routing principles
+
+1. Prefer the simplest tool that can do the job well.
+2. Prefer local/private tools for sensitive material.
+3. Ask before using paid, destructive, publishing, or external-send actions.
+4. Do not paste secrets into chats, prompts, or notes.
+5. If a tool choice affects cost, privacy, quality, or reversibility, say so before acting.
+
+## Preferred tool routing
+
+| Work type | Default | Fallback / escalation | Notes |
+|---|---|---|---|
+| Search this vault | Editor/file search | AI-assisted search | Search before answering vault-specific questions. |
+| File or triage notes | `filing` workflow, if available | Manual folder README rules | Ask before deleting or archiving important material. |
+| Project setup | `project-setup` workflow, if available | Use `01 Projects/README.md` | Create README + Log; keep scope small. |
+| Handoff / resume context | `handoff` workflow, if available | Project `Log.md` entry | Preserve goal, state, decisions, blockers, next action. |
+| Writing in your voice | `Voice.md` | Recent examples you provide | Do not invent a voice profile from nothing. |
+| Web research | Browser/search tool | Manual source review | Cite sources and separate facts from assumptions. |
+| Sensitive data handling | Local files only | Ask owner | Avoid external tools unless explicitly approved. |
+
+## External systems
+
+Use this section to note where important systems live without storing credentials.
+
+| System | Access path | Owns / contains | Agent use |
+|---|---|---|---|
+| Password manager | Your chosen password manager | Credentials and secure notes | Agents should never ask you to paste secrets into the vault. |
+| Calendar | Your calendar app | Events, availability | Ask before creating or changing events. |
+| Email | Your email app | Messages, threads | Ask before sending, forwarding, or deleting. |
+| Task manager | Your task app, if any | Tasks and reminders | Clarify source of truth before duplicating tasks in Markdown. |
+
+## Key vault locations
+
+| Need | Location |
+|---|---|
+| Vault-wide operating rules | `README.md` |
+| Folder-specific rules | Each folder's `README.md` |
+| Project state | `01 Projects/<Project>/README.md` |
+| Project history | `01 Projects/<Project>/Log.md` |
+| Personal operating context | `06 Meta/About Me.md` |
+| Voice / writing preferences | `06 Meta/Voice.md` |
+| Agent workflows | `06 Meta/Agent OS/canonical/skills/` |
+| Tool specs | `06 Meta/Agent OS/tools/` |
+
+## When to create a tool registry entry
+
+Create a file under `06 Meta/Agent OS/tools/` only when a tool has durable details worth maintaining, such as:
+
+- setup steps;
+- exact invocation patterns;
+- cost limits;
+- API quirks;
+- recurring failure modes;
+- related skills or workflows.
+
+Do not create tool specs for one-off experiments.

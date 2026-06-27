@@ -1,35 +1,47 @@
 # External Skills
 
-This manifest tracks upstream-owned Agent Skills that are exposed through this Life OS without becoming self-owned canonical skills.
+Registry for upstream-owned skills exposed through this Life OS.
+
+Use this when a skill comes from another person, repo, package, marketplace, or external source and you want to preserve where it came from.
 
 ## Policy
 
-- External skills remain upstream-owned.
-- Do not edit external source folders directly unless deliberately adopting or forking the skill.
-- Prefer symlinks or configured skill paths over copied content.
-- Track both `Current ref` and `Upstream version` when upstream declares one.
-- Prefer `EXT` direct exposure when active tools can load the upstream source and no local behavior is needed.
-- Use `EXT-WRAPPER` only for real operational reasons: invalid YAML or harness breakage, unsafe or non-portable upstream assumptions, local routing guardrails, or deliberate policy overlays.
-- Put vault-owner-specific behavior in a thin wrapper, not in upstream files.
+- Preserve upstream-owned skills unedited when possible.
+- Prefer direct exposure (`EXT`) when the upstream skill is usable as-is.
+- Use a wrapper (`EXT-WRAPPER`) only when local naming, constraints, routing, or compatibility require it.
+- Adopt as self-owned (`SELF-OWNED`) only when you intend to maintain the skill yourself.
+- Ask before running install scripts, publishing, deleting, or touching secrets.
+
+## Ownership statuses
+
+| Status | Meaning |
+|---|---|
+| `EXT` | Upstream-owned and exposed directly. |
+| `EXT-WRAPPER` | Upstream-owned with a thin local wrapper. |
+| `SELF-OWNED` | Maintained in this Life OS. Usually belongs under `canonical/skills/`. |
 
 ## Entry template
 
 ```markdown
-## owner/repo or source name
+## skill-name
 
-| Field | Value |
-| --- | --- |
-| Status | `EXT` or `EXT-WRAPPER` |
-| Owner | External upstream |
-| Source | https://example.com/source |
-| Local source | `06 Meta/Agent OS/external/<source>/` |
-| Current ref | commit, tag, release, checksum, or snapshot note |
-| Upstream version | version or `not declared` |
-| Installed | YYYY-MM-DD |
-| Last checked | YYYY-MM-DD |
-| Update cadence | Monthly manual check |
-| Exposure | canonical discovery path, symlink, or configured skill path |
-| Skills | `skill-name` |
-| Wrapper | reason, if `EXT-WRAPPER` |
-| Notes | anything important |
+- status: EXT | EXT-WRAPPER | SELF-OWNED
+- upstream owner:
+- source URL:
+- local source path:
+- current ref/version:
+- installed/exposed to:
+- last checked: YYYY-MM-DD
+- wrapper path, if any:
+- wrapper reason, if any:
+- notes:
 ```
+
+## Agent instructions
+
+- Do not edit external sources casually.
+- Do not copy external skill content into canonical unless adopting it intentionally.
+- Keep wrapper notes thin and explicit.
+- Record source, version, and exposure path so future agents can audit or update it.
+
+<!-- Add external skills here only after setup and approval. -->
