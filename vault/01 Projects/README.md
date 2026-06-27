@@ -21,7 +21,7 @@ Examples:
 - prepare taxes;
 - create a course;
 - clean up a digital system;
-- write and share a guide.
+- write and launch a guide.
 
 ## Project shape
 

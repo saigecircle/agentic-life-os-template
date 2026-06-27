@@ -38,12 +38,15 @@ Create a folder under:
 01 Projects/
 ```
 
-Use the project templates from this repo if helpful:
+Use the starter project already inside the vault as your model:
 
-- `templates/project-readme.md`
-- `templates/project-log.md`
+```text
+01 Projects/Example Project/
+├── README.md
+└── Log.md
+```
 
-A good first project has a clear finish line and one next action.
+Copy that shape for your first real project. A good first project has a clear finish line and one next action.
 
 ## 6. Add one ongoing area
 

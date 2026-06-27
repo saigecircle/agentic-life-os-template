@@ -4,14 +4,26 @@ Relationship context. This can be a light CRM for collaborators, clients, mentor
 
 > Before a call or message, a good person note should restore useful context in about 30 seconds.
 
-## Privacy boundary
+## Relationship context boundary
 
-People notes can become sensitive quickly.
+People notes are for relationship context, not surveillance.
 
-- Keep notes respectful, factual, and useful.
-- Do not store secrets, credentials, or unnecessary sensitive personal data.
-- Ask before sending or sharing person notes outside the vault.
-- When unsure, write less and link to the relevant Project or Area instead.
+Keep what helps you show up well:
+
+- how you know them;
+- current threads and open loops;
+- useful preferences they have shared;
+- commitments, decisions, and follow-ups;
+- dated interaction notes.
+
+Leave out what does not help:
+
+- gossip;
+- assumptions about motives;
+- unnecessary sensitive details;
+- secrets, credentials, or private documents.
+
+When work belongs elsewhere, link to the relevant Project or Area instead of turning the person note into a dumping ground.
 
 ## Structure — flat by default, folder when needed
 
@@ -92,8 +104,8 @@ Useful preferences, pronouns, timezone, communication style, constraints.
 ## Agent instructions
 
 - Do not invent relationship facts.
-- Be careful with private details.
-- Ask before creating notes for sensitive relationships.
+- Keep notes grounded in useful relationship context.
+- Link to Projects or Areas when the work belongs there.
 - Prefer dated notes over vague summaries.
 - Keep person context connected to Projects and Areas with links.
 

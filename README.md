@@ -81,7 +81,7 @@ LifeOS/
 └── CLAUDE.md
 ```
 
-This repo is the template. Your installed vault is where your real life context goes. Do not publish your real private vault.
+This repo is the starter kit. Your installed vault is where your real life context goes.
 
 ## The folder architecture
 
@@ -113,14 +113,11 @@ This is not just a folder template. It gives humans and AI agents the same map.
 - `docs/folder-architecture.md`
 - `docs/ai-agent-usage.md`
 - `docs/canonical-vs-adapter.md`
-- `docs/privacy-and-redaction.md`
 - `docs/customization-guide.md`
 
-## Privacy warning
+## Working with real context
 
-Do not publish your real private vault.
-
-This template is safe because it uses empty folders, generic templates, and fake examples. Keep real client notes, finances, credentials, health notes, journal entries, logs, and private infrastructure out of any public repo.
+Your installed vault will eventually contain real projects, people, systems, and decisions. Keep credentials in a password manager, keep highly sensitive records in the systems designed for them, and use Markdown for the context that helps you think, decide, and resume work.
 
 ## License
 

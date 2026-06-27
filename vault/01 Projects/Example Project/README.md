@@ -7,7 +7,7 @@ target: 2026-01-31
 
 # Example Project
 
-A fake example project showing the recommended shape.
+A starter example project showing the recommended shape.
 
 ## Goal / definition of done
 
@@ -15,11 +15,11 @@ Create a simple landing page draft and review it.
 
 ## Status
 
-Example only. Replace this with a real project.
+Starter content. Replace this with your actual project state.
 
 ## Next action
 
-Copy the project template and create your first real project.
+Copy this project shape and create your first real project.
 
 ## File map
 

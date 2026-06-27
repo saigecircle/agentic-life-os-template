@@ -8,7 +8,7 @@ In this template, the root `README.md` inside the installed vault is the univers
 
 Ask the agent to read `README.md` first.
 
-The README tells the agent how the vault is organised, which files matter, and what it should avoid doing.
+The README tells the agent how the vault is organised, which files matter, and how to work with local context.
 
 ## Safe starter prompts
 
@@ -28,15 +28,15 @@ Read README.md first. Then review 00 Inbox and suggest where each item belongs. 
 Read README.md first. Then help me continue the project in 01 Projects/[project name]. Read the project README and Log before suggesting next actions.
 ```
 
-## Safety rules for agents
+## Working rules for agents
 
 Agents should:
 
 - read local README files before acting in a folder;
-- ask before deleting, publishing, or making large reorganisations;
+- confirm before deleting or making large reorganisations;
 - explain assumptions before moving files;
 - prefer small, reversible changes;
-- keep private data out of public repos;
+- keep credentials and raw sensitive records in their source systems;
 - update project logs when meaningful work happens.
 
 ## Project continuity
@@ -63,4 +63,4 @@ The intended lifecycle is:
 - `canonicalize-skill` creates the canonical discovery surface.
 - `wire-skill` exposes it to supported tools without duplicating source content.
 
-Do not copy the same skill into multiple tool folders unless there is no cleaner adapter path.
+Keep the workflow in one canonical place and let tool-specific adapters point to it.

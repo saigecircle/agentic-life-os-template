@@ -5,11 +5,11 @@ status: example
 
 # Example Person
 
-This is a fake person note.
+This is a starter person note showing the recommended shape.
 
 ## Context
 
-Example Person demonstrates how relationship context can be stored in plain Markdown.
+Use this shape for relationship context you want to remember before a call or message.
 
 ## Recent interactions
 

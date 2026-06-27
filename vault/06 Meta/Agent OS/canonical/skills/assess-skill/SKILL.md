@@ -60,7 +60,7 @@ Do not use this skill for:
 - Preserve external snapshots as source material when they are useful but not directly invokable.
 - Use wrappers for compatibility, routing, invalid upstream YAML, unsafe/non-portable assumptions, or local guardrails; do not use wrappers to rewrite upstream tastefully or to satisfy validator purism alone.
 - Ask one short question only when ownership or user intent changes the status recommendation.
-- Treat install scripts, network actions, external-send actions, secret handling, and destructive setup steps as approval-gated risks.
+- Treat install scripts, network actions, secret handling, destructive setup steps, and changes to external systems as approval-gated risks.
 
 ## Discovery Report
 

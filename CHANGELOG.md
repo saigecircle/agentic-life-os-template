@@ -17,12 +17,13 @@ Made the installed starter vault more useful on day one by expanding its interna
 - Expanded folder READMEs for Projects, People, Areas, Resources, Archive, and Meta with what-belongs/what-doesn't-belong guidance, starter shapes, and agent instructions.
 - Expanded `vault/06 Meta/Tools.md`, `Team.md`, `Voice.md`, and `About Me.md` with useful placeholders and operating context prompts.
 - Expanded Agent OS, tool registry, external skills, and adapter notes while keeping them tool-agnostic and public-safe.
+- Consolidated starter shapes into the installable `vault/` itself instead of maintaining separate sample folders.
 
 ### Why it matters
 
-The template now behaves more like a real Life OS: folder-level guidance is detailed enough for humans and agents to use without copying private vault specifics.
+The template now behaves more like a real Life OS: folder-level guidance is detailed enough for humans and agents to use immediately.
 
-## 2026-06-27 — Beginner-friendly publishing cleanup
+## 2026-06-27 — Beginner-friendly documentation cleanup
 
 Improved the public template documentation so new users can understand, install, and safely try the Agentic Life OS without depending on any single AI tool.
 
@@ -36,13 +37,12 @@ Improved the public template documentation so new users can understand, install,
 - Clarified that the installer copies only `vault/` and that `--force` / `-Force` can overwrite destination files.
 - Clarified tool-agnostic AI-agent usage with safe starter prompts.
 - Expanded canonical-vs-adapter guidance with plain-English do/don't rules.
-- Expanded privacy guidance with practical redaction examples.
 - Standardised the folder architecture docs around PPARAM plus `00 Inbox`.
 - Updated the license section to match the MIT license in `LICENSE`.
 
 ### Why it matters
 
-The template is easier for beginners to adopt, safer to share, and clearer about the principle that the vault is the source of truth while AI tools are interchangeable clients.
+The template is easier for beginners to adopt and clearer about the principle that the vault is the source of truth while AI tools are interchangeable clients.
 
 ## 2026-06-26 — Fit-for-purpose tool routing
 

@@ -46,7 +46,7 @@ A campaign, launch, cleanup, or improvement *for* an Area is usually a Project t
 1. Read this README first.
 2. Check local folder README files before acting in a folder.
 3. For project work, read the project `README.md` and `Log.md` before changing anything.
-4. State assumptions before moving, deleting, sharing externally, or reorganising files.
+4. State assumptions before moving, deleting, or reorganising files.
 5. Prefer small, reversible changes.
 6. Update logs when meaningful project progress or decisions happen.
 7. Treat `06 Meta/` as operating context, not as a dumping ground.
@@ -106,14 +106,14 @@ Do not store passwords, API keys, OAuth files, or secrets in this vault.
 - Link related notes when the link would be useful later.
 - Use Markdown links for external URLs.
 - Use wikilinks if your editor supports them and you want rename-safe internal links.
-- Do not delete or share externally without explicit confirmation.
+- Confirm before deleting or making large reorganisations.
 - Archive inactive material instead of leaving active folders noisy.
 
-## Privacy and safety
+## Sensitive source systems
 
-Use this vault as a working home for context, but keep high-risk material in the right system.
+Use this vault as a working home for context, not as a replacement for systems that already own secure records.
 
-- Store passwords, API keys, OAuth files, tokens, cookies, and recovery codes in a password manager, not Markdown.
-- Ask before sending, syncing, or sharing sensitive notes outside your local workspace.
-- Keep finance, health, legal, journal, and relationship details only as detailed as they need to be useful.
-- When in doubt, link to the secure source of truth instead of copying sensitive data here.
+- Store passwords, API keys, OAuth files, tokens, cookies, and recovery codes in a password manager.
+- Keep finance, health, legal, and identity records in the systems designed for them.
+- In Markdown, write the summary, decision, next action, or link that helps you resume work.
+- When in doubt, link to the source of truth instead of copying raw material here.

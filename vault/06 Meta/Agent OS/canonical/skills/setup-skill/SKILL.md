@@ -42,7 +42,7 @@ Do not use this skill for:
 - Prefer `EXT` when direct upstream exposure works and no vault-owner-specific behavior is needed.
 - Use `EXT-WRAPPER` only for real operational reasons: invalid YAML or harness breakage, unsafe/non-portable assumptions, local routing guardrails, or deliberate policy overlays.
 - Use symlinks or configured discovery paths instead of copied skill content.
-- Stop before overwriting a non-symlink destination, deleting a skill folder, running an install script, sending externally, or touching secrets.
+- Stop before overwriting a non-symlink destination, deleting a skill folder, running an install script, touching secrets, or changing external systems.
 
 ## Output
 

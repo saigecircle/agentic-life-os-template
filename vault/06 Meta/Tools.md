@@ -27,7 +27,7 @@ If a tool needs detailed setup, invocation examples, or failure modes, create a 
 
 1. Prefer the simplest tool that can do the job well.
 2. Prefer local/private tools for sensitive material.
-3. Ask before using paid, destructive, or external-send actions.
+3. Confirm before using paid or destructive actions.
 4. Do not paste secrets into chats, prompts, or notes.
 5. If a tool choice affects cost, privacy, quality, or reversibility, say so before acting.
 
@@ -41,7 +41,6 @@ If a tool needs detailed setup, invocation examples, or failure modes, create a 
 | Handoff / resume context | `handoff` workflow, if available | Project `Log.md` entry | Preserve goal, state, decisions, blockers, next action. |
 | Writing in your voice | `Voice.md` | Recent examples you provide | Do not invent a voice profile from nothing. |
 | Web research | Browser/search tool | Manual source review | Cite sources and separate facts from assumptions. |
-| Sensitive data handling | Local files only | Ask owner | Avoid external tools unless explicitly approved. |
 
 ## External systems
 
@@ -49,7 +48,7 @@ Use this section to note where important systems live without storing credential
 
 | System | Access path | Owns / contains | Agent use |
 |---|---|---|---|
-| Password manager | Your chosen password manager | Credentials and secure notes | Agents should never ask you to paste secrets into the vault. |
+| Password manager | Your chosen password manager | Credentials and secure notes | Keep actual secret values out of Markdown. |
 | Calendar | Your calendar app | Events, availability | Ask before creating or changing events. |
 | Email | Your email app | Messages, threads | Ask before sending, forwarding, or deleting. |
 | Task manager | Your task app, if any | Tasks and reminders | Clarify source of truth before duplicating tasks in Markdown. |
