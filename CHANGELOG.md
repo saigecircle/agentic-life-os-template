@@ -2,6 +2,28 @@
 
 All notable changes to the Agentic Life OS Template will be documented here.
 
+## 2026-06-27 — Beginner-friendly publishing cleanup
+
+Improved the public template documentation so new users can understand, install, and safely try the Agentic Life OS without depending on any single AI tool.
+
+### Added
+
+- Added `docs/first-15-minutes.md` as a guided getting-started path.
+
+### Changed
+
+- Simplified the README onboarding flow and moved the first-use path near the top.
+- Clarified that the installer copies only `vault/` and that `--force` / `-Force` can overwrite destination files.
+- Clarified tool-agnostic AI-agent usage with safe starter prompts.
+- Expanded canonical-vs-adapter guidance with plain-English do/don't rules.
+- Expanded privacy guidance with practical redaction examples.
+- Standardised the folder architecture docs around PPARAM plus `00 Inbox`.
+- Updated the license section to match the MIT license in `LICENSE`.
+
+### Why it matters
+
+The template is easier for beginners to adopt, safer to share, and clearer about the principle that the vault is the source of truth while AI tools are interchangeable clients.
+
 ## 2026-06-26 — Fit-for-purpose tool routing
 
 Added the minimal tool-routing architecture for reliable, fit-for-purpose agent tool choice. Cost awareness is included as one routing factor, not the main purpose.

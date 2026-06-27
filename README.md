@@ -6,7 +6,22 @@ This repo gives you a clean starter vault for organising projects, people, areas
 
 The core idea:
 
-> Your Life OS is the durable home for context. AI tools are clients of that context, not the place where the context should be trapped.
+> Your Life OS is the durable home for context. AI tools are clients of that context, not the place where context should be trapped.
+
+## Start here
+
+If you are new, do this first:
+
+1. Install the starter vault into a folder you choose.
+2. Open it in Obsidian, VS Code, Cursor, or any Markdown editor.
+3. Read the `README.md` inside the installed vault.
+4. Fill in `06 Meta/About Me.md`.
+5. Create one real project.
+6. Add one ongoing area.
+7. Drop one messy note into `00 Inbox`.
+8. Ask an AI agent: “Read README.md first. Then help me file the note in 00 Inbox and explain your reasoning before moving it.”
+
+See `docs/first-15-minutes.md` for the guided version.
 
 ## Who this is for
 
@@ -14,8 +29,8 @@ Use this if you want:
 
 - a simple second-brain structure that works in plain Markdown;
 - an Obsidian-friendly vault without depending on Obsidian;
-- a project system with README files, logs, and handoffs;
-- a tool-agnostic pattern for AI agents like Claude Code, Codex, Pi, OpenCode, Cursor, or future tools;
+- project continuity through README and Log files;
+- portable context that can work with Claude Code, Codex, Pi, OpenCode, Cursor, or future agents;
 - a small Agent OS layer for canonical workflows and tool-specific adapters.
 
 ## Quick install
@@ -28,13 +43,15 @@ From a cloned repo:
 ./install.sh ~/Documents/LifeOS
 ```
 
-Or directly from GitHub once this repo is public:
+Or directly from GitHub:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/saigecircle/agentic-life-os-template/main/install.sh | bash -s -- ~/Documents/LifeOS
 ```
 
-If you omit the destination, the installer will ask where to install the vault.
+If you omit the destination, the installer asks where to install the vault.
+
+By default, the installer refuses to copy into a non-empty folder. Use `--force` only when you intentionally want to merge and overwrite files in the destination.
 
 ### Windows PowerShell
 
@@ -43,6 +60,8 @@ From a cloned repo:
 ```powershell
 ./install.ps1 -Destination "$HOME/Documents/LifeOS"
 ```
+
+Use `-Force` only when you intentionally want to merge and overwrite files in the destination.
 
 ## What gets installed
 
@@ -62,7 +81,11 @@ LifeOS/
 └── CLAUDE.md
 ```
 
+This repo is the template. Your installed vault is where your real life context goes. Do not publish your real private vault.
+
 ## The folder architecture
+
+This template uses PPARAM:
 
 - **00 Inbox** — capture-first parking zone for unsorted notes, links, screenshots, and rough ideas.
 - **01 Projects** — time-bound work with a finish line.
@@ -74,47 +97,24 @@ LifeOS/
 
 ## What makes this tool-agnostic and agentic
 
-This is not just a folder template.
-
-It includes an opinionated pattern for making your context usable by AI agents:
+This is not just a folder template. It gives humans and AI agents the same map.
 
 1. **Universal entry point** — root `README.md` explains the vault to humans and agents.
-2. **Tiny adapters** — `AGENTS.md`, `CLAUDE.md`, and tool-specific notes point back to the canonical README.
-3. **Project continuity** — every project can have a README and Log so agents can resume work without guessing.
+2. **Tiny adapters** — `AGENTS.md`, `CLAUDE.md`, and tool-specific notes point back to canonical docs.
+3. **Project continuity** — every meaningful project can have a README and Log so agents can resume without guessing.
 4. **Canonical workflows** — reusable workflows live in `06 Meta/Agent OS/canonical/skills/`.
-5. **Tool-specific adapters** — `06 Meta/Agent OS/adapters/` explains how different AI tools can use the same canonical source of truth.
-6. **Skill lifecycle** — `setup-skill` is the orchestrator: it calls `assess-skill` to choose the lightest path, `canonicalize-skill` to create the canonical discovery surface, and `wire-skill` to expose it to different AI tools without duplicating source content.
-7. **Fit-for-purpose tool routing** — `06 Meta/Tools.md` tells agents which tool fits the work first; `06 Meta/Agent OS/tools/` stores detailed tool specs only when repeated use justifies them.
+5. **Tool-specific adapters** — `06 Meta/Agent OS/adapters/` explains how different tools can use the same source of truth.
+6. **Fit-for-purpose tool routing** — `06 Meta/Tools.md` tells agents which tools fit the work first; deeper tool specs are optional.
 
-## Tool routing in plain English
+## Read more
 
-Use three layers, and stop at the first one that answers the question:
-
-1. **`06 Meta/Tools.md`** — practical defaults: “for this type of work, use this tool first.” This is where fit-for-purpose preferences belong, including cost constraints when they matter.
-2. **`06 Meta/Agent OS/tools/`** — durable tool specs: setup, invocation, cost notes, and failure modes. Add entries only for tools used often enough to justify maintenance.
-3. **Skills** — workflow judgment: when the work needs process, constraints, or domain decisions rather than just a tool call.
-
-This keeps the system simple: agents can choose the right tool quickly, avoid unnecessary complexity or spend, and only open deeper specs when execution details matter.
-
-Read more:
-
+- `docs/first-15-minutes.md`
 - `docs/philosophy.md`
 - `docs/folder-architecture.md`
 - `docs/ai-agent-usage.md`
 - `docs/canonical-vs-adapter.md`
 - `docs/privacy-and-redaction.md`
 - `docs/customization-guide.md`
-
-## First 15 minutes
-
-1. Install the starter vault into a folder you choose.
-2. Open it in Obsidian, VS Code, Cursor, or any Markdown editor.
-3. Read the root `README.md` in the installed vault.
-4. Fill in `06 Meta/About Me.md`.
-5. Create one real project using `templates/project-readme.md` and `templates/project-log.md` from this repo.
-6. Add one ongoing area.
-7. Drop one messy note into `00 Inbox`.
-8. Ask an AI agent: “Read README.md first. Then help me file the note in 00 Inbox and explain your reasoning before moving it.”
 
 ## Privacy warning
 
@@ -124,4 +124,4 @@ This template is safe because it uses empty folders, generic templates, and fake
 
 ## License
 
-Choose a license before publishing. MIT is simplest for a public template. CC BY or CC BY-NC may fit better if you want attribution or non-commercial use.
+MIT. See `LICENSE`.

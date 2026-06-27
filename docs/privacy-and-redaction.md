@@ -2,7 +2,9 @@
 
 Never publish your real private vault.
 
-Do not put these in a public repo:
+This repo is a clean template. Your installed vault is where your real life context goes.
+
+## Do not put these in a public repo
 
 - client notes;
 - finance data;
@@ -13,9 +15,44 @@ Do not put these in a public repo:
 - health, family, journal, or relationship notes;
 - machine-specific app metadata.
 
-Use fake examples only.
+## Use fake examples only
 
-Before publishing, search for obvious sensitive terms like:
+Use:
+
+```text
+Example Client
+```
+
+instead of a real client name.
+
+Use:
+
+```text
+example@example.com
+https://example.com
+```
+
+instead of real contact details or private URLs.
+
+## Before sharing your own version
+
+If you fork or adapt this template, check that you are sharing the template only, not your real vault.
+
+Look for:
+
+- real names;
+- email addresses;
+- phone numbers;
+- addresses;
+- API keys;
+- `.env` files;
+- invoices or receipts;
+- screenshots;
+- chat exports;
+- private logs;
+- machine-specific config.
+
+You can also search for obvious sensitive terms like:
 
 ```text
 api_key
@@ -28,3 +65,7 @@ receipt
 bank
 private
 ```
+
+## Final safety rule
+
+If you would not put it on a public website, do not put it in a public template repo.
