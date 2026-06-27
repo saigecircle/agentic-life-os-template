@@ -40,7 +40,7 @@ Keep this practical. You do not need to write a life story. Add the context that
 
 ## Privacy boundaries
 
-<!-- Name anything agents should not store, infer, send externally, or publish without explicit permission. -->
+<!-- Name anything agents should not store, infer, or send externally without explicit permission. -->
 
-- Do not publish private vault content.
+- Do not send sensitive context outside the vault without explicit permission.
 - Do not store secrets in Markdown.

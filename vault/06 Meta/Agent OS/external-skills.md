@@ -10,7 +10,7 @@ Use this when a skill comes from another person, repo, package, marketplace, or 
 - Prefer direct exposure (`EXT`) when the upstream skill is usable as-is.
 - Use a wrapper (`EXT-WRAPPER`) only when local naming, constraints, routing, or compatibility require it.
 - Adopt as self-owned (`SELF-OWNED`) only when you intend to maintain the skill yourself.
-- Ask before running install scripts, publishing, deleting, or touching secrets.
+- Ask before running install scripts, deleting, sending externally, or touching secrets.
 
 ## Ownership statuses
 

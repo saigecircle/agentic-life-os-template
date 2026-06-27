@@ -46,7 +46,7 @@ A campaign, launch, cleanup, or improvement *for* an Area is usually a Project t
 1. Read this README first.
 2. Check local folder README files before acting in a folder.
 3. For project work, read the project `README.md` and `Log.md` before changing anything.
-4. State assumptions before moving, deleting, publishing, or reorganising files.
+4. State assumptions before moving, deleting, sharing externally, or reorganising files.
 5. Prefer small, reversible changes.
 6. Update logs when meaningful project progress or decisions happen.
 7. Treat `06 Meta/` as operating context, not as a dumping ground.
@@ -106,18 +106,14 @@ Do not store passwords, API keys, OAuth files, or secrets in this vault.
 - Link related notes when the link would be useful later.
 - Use Markdown links for external URLs.
 - Use wikilinks if your editor supports them and you want rename-safe internal links.
-- Do not delete or publish without explicit confirmation.
+- Do not delete or share externally without explicit confirmation.
 - Archive inactive material instead of leaving active folders noisy.
 
 ## Privacy and safety
 
-This starter vault is safe because it is generic. Your real vault may become private quickly.
+Use this vault as a working home for context, but keep high-risk material in the right system.
 
-Before sharing or publishing any adapted version, remove:
-
-- real people/client notes;
-- finance, health, journal, family, or legal material;
-- credentials, tokens, `.env` files, OAuth files, cookies, or private infrastructure details;
-- screenshots or logs that reveal private systems.
-
-If you would not put it on a public website, do not put it in a public template repo.
+- Store passwords, API keys, OAuth files, tokens, cookies, and recovery codes in a password manager, not Markdown.
+- Ask before sending, syncing, or sharing sensitive notes outside your local workspace.
+- Keep finance, health, legal, journal, and relationship details only as detailed as they need to be useful.
+- When in doubt, link to the secure source of truth instead of copying sensitive data here.

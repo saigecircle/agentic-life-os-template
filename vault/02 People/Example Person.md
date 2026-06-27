@@ -17,4 +17,4 @@ Example Person demonstrates how relationship context can be stored in plain Mark
 
 ## Open loops
 
-- [ ] Replace this with a real note in your private vault only.
+- [ ] Replace this with a real follow-up in your own vault.

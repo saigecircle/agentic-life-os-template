@@ -98,7 +98,7 @@ Useful starters:
 
 - Human-readable first.
 - Tool-agnostic by default.
-- Fake examples only in public templates.
+- Keep examples generic unless they belong in your own private working notes.
 - No secrets or credentials.
 - Add structure only when it reduces future confusion.
 

@@ -10,7 +10,7 @@ People notes can become sensitive quickly.
 
 - Keep notes respectful, factual, and useful.
 - Do not store secrets, credentials, or unnecessary sensitive personal data.
-- Do not publish real People notes in a public repo.
+- Ask before sending or sharing person notes outside the vault.
 - When unsure, write less and link to the relevant Project or Area instead.
 
 ## Structure — flat by default, folder when needed

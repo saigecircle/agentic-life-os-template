@@ -6,7 +6,7 @@ This is not a contact database; use `02 People/` for relationship notes. This fi
 
 ## Human collaborators
 
-<!-- Add names or roles only in your private vault. For public templates, keep examples generic. -->
+<!-- Add the real people or roles that support your work. -->
 
 | Person / role | Helps with | Notes |
 |---|---|---|
@@ -16,7 +16,7 @@ This is not a contact database; use `02 People/` for relationship notes. This fi
 
 | Agent / tool | Best for | Boundaries |
 |---|---|---|
-| Generic Agent | Reading README files, filing notes, drafting plans | Ask before deleting, publishing, or major reorganising. |
+| Generic Agent | Reading README files, filing notes, drafting plans | Ask before deleting, sharing externally, or major reorganising. |
 | Coding Agent | Editing files, running checks, implementation | Read project/folder guidance first. |
 | Research Agent | Gathering sources and summarising evidence | Cite sources and separate facts from assumptions. |
 
@@ -24,7 +24,7 @@ This is not a contact database; use `02 People/` for relationship notes. This fi
 
 - The vault is the source of truth, not any single chat.
 - Agents should leave useful state in Markdown when work needs to continue later.
-- Humans make final calls on sensitive, financial, legal, publishing, or destructive actions.
+- Humans make final calls on sensitive, financial, legal, external-sharing, or destructive actions.
 - Prefer clear ownership: one person or agent should be responsible for the next action.
 
 <!-- Customise this with the people and AI tools that actually support your work. -->

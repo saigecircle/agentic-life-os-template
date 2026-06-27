@@ -27,7 +27,7 @@ If a tool needs detailed setup, invocation examples, or failure modes, create a 
 
 1. Prefer the simplest tool that can do the job well.
 2. Prefer local/private tools for sensitive material.
-3. Ask before using paid, destructive, publishing, or external-send actions.
+3. Ask before using paid, destructive, or external-send actions.
 4. Do not paste secrets into chats, prompts, or notes.
 5. If a tool choice affects cost, privacy, quality, or reversibility, say so before acting.
 

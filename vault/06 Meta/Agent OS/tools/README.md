@@ -70,6 +70,6 @@ Known errors and recovery steps.
 
 - Do not store secrets here.
 - Refer to credentials by name only, such as “password manager entry: Example Tool”.
-- Ask before paid, destructive, publishing, or external-send actions.
+- Ask before paid, destructive, or external-send actions.
 
 <!-- Add tool specs only after repeated use proves they are needed. -->
